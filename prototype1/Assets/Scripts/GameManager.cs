@@ -16,6 +16,13 @@ public class GameManager : MonoBehaviour
     private int restTime;
     public TextMeshProUGUI timeText;
     public TextMeshProUGUI gameOverText;
+    public TextMeshProUGUI colourChartTextGreen;
+    public TextMeshProUGUI colourChartTextPink;
+    public TextMeshProUGUI colourChartTextYellow;
+    public TextMeshProUGUI colourChartTextMultiplication;
+    public TextMeshProUGUI colourChartTextDivision;
+
+
     public Button restartButton;
     private bool paused;
 
@@ -27,10 +34,15 @@ public class GameManager : MonoBehaviour
     {
 
         isGameActive = true;
-        restTime = 30;
+        restTime = 25;
         timeText.gameObject.SetActive(true);
         scoreText.gameObject.SetActive(true);
         operatorText.gameObject.SetActive(true);
+        colourChartTextGreen.gameObject.SetActive(true);
+        colourChartTextPink.gameObject.SetActive(true);
+        colourChartTextYellow.gameObject.SetActive(true);
+        colourChartTextMultiplication.gameObject.SetActive(true);
+        colourChartTextDivision.gameObject.SetActive(true);
 
         StartCoroutine(UpdateTime());
 
@@ -49,6 +61,11 @@ public class GameManager : MonoBehaviour
         timeText.gameObject.SetActive(false);
         scoreText.gameObject.SetActive(false);
         operatorText.gameObject.SetActive(false);
+        colourChartTextGreen.gameObject.SetActive(false);
+        colourChartTextPink.gameObject.SetActive(false);
+        colourChartTextYellow.gameObject.SetActive(false);
+        colourChartTextMultiplication.gameObject.SetActive(false);
+        colourChartTextDivision.gameObject.SetActive(false);
         isGameActive = false;
     }
 
@@ -57,7 +74,7 @@ public class GameManager : MonoBehaviour
         while (isGameActive)
         {
 
-            timeText.text = " Time: " + restTime;
+            timeText.text = "Time: " + restTime;
             yield return new WaitForSeconds(1);
             restTime -= 1;
             if (restTime < 0)
@@ -65,8 +82,8 @@ public class GameManager : MonoBehaviour
                 GameOver();
 
             }
-           
         }
+        
 
     }
     public void RestartGame()

@@ -3,7 +3,25 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - multiplication
+  - eight
+  - Obstacle
+  - division
+  - Coin
+  - seven
+  - nine
+  - four
+  - Number 1
+  - Number 2
+  - five
+  - six
+  - three
+  - two
+  - one
+  - ten
+  - twenty
+  - fifty
   layers:
   - Default
   - TransparentFX
