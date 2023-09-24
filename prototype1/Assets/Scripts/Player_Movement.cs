@@ -16,44 +16,50 @@ public class Player_Movement : MonoBehaviour
     public float forwardsForce = 40f;
     public float sidewaysForce = 40f;
     public TextMeshProUGUI scoreText;
-    private int score=0;
+    private int score = 0;
     public TextMeshProUGUI operatorText;
     private bool operator_collected = false;
     private string operatortext;
+    private GameManager gameManager;
+
 
 
 
     void Start()
     {
         playerRb = GetComponent<Rigidbody>();
+
     }
 
     // Update is called once per frame
     void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            playerRb.AddForce(Vector3.up * jumpForce, ForceMode.Acceleration);
-        }
-        if (Input.GetKey(KeyCode.UpArrow))
-        {
-            playerRb.AddForce(0, 0, forwardsForce * Time.deltaTime, ForceMode.VelocityChange);
-        }
-        if (Input.GetKey(KeyCode.DownArrow))
-        {
 
-            playerRb.AddForce(0, 0, -forwardsForce * Time.deltaTime, ForceMode.VelocityChange);
-        }
-        if (Input.GetKey(KeyCode.LeftArrow))
-        {
-            playerRb.AddForce(-sidewaysForce * Time.deltaTime, 0, 0, ForceMode.VelocityChange);
-        }
-        if (Input.GetKey(KeyCode.RightArrow))
-        {
-            playerRb.AddForce(sidewaysForce * Time.deltaTime, 0, 0, ForceMode.VelocityChange);
-        }
+    {
         
-     }
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                playerRb.AddForce(Vector3.up * jumpForce, ForceMode.Acceleration);
+            }
+            if (Input.GetKey(KeyCode.UpArrow))
+            {
+                playerRb.AddForce(0, 0, forwardsForce * Time.deltaTime, ForceMode.VelocityChange);
+            }
+            if (Input.GetKey(KeyCode.DownArrow))
+            {
+
+                playerRb.AddForce(0, 0, -forwardsForce * Time.deltaTime, ForceMode.VelocityChange);
+            }
+            if (Input.GetKey(KeyCode.LeftArrow))
+            {
+                playerRb.AddForce(-sidewaysForce * Time.deltaTime, 0, 0, ForceMode.VelocityChange);
+            }
+            if (Input.GetKey(KeyCode.RightArrow))
+            {
+                playerRb.AddForce(sidewaysForce * Time.deltaTime, 0, 0, ForceMode.VelocityChange);
+            }
+        
+
+    }
 
     private void OnCollisionEnter(Collision other)
     {
@@ -73,22 +79,22 @@ public class Player_Movement : MonoBehaviour
             Destroy(other.gameObject);
         }
         if (other.gameObject.CompareTag("one"))
-        {  if (operator_collected)
+        { if (operator_collected)
             {
                 if (operatortext == "/")
                 {
                     score /= 1;
                 }
-                       
 
-                if (operatortext== "X")
+
+                if (operatortext == "X")
                 {
                     score *= 1;
 
                 }
                 scoreText.text = "Score: " + score;
                 operator_collected = false;
-                operatorText.text = "Operator collected : " ; 
+                operatorText.text = "Operator collected : ";
 
 
             }
@@ -105,7 +111,7 @@ public class Player_Movement : MonoBehaviour
         }
         if (other.gameObject.CompareTag("two"))
         {
-         
+
 
             if (operator_collected)
             {
@@ -137,7 +143,7 @@ public class Player_Movement : MonoBehaviour
 
         if (other.gameObject.CompareTag("three"))
         {
-           
+
             if (operator_collected)
             {
                 if (operatortext == "/")
@@ -193,7 +199,7 @@ public class Player_Movement : MonoBehaviour
                 scoreText.text = "Score: " + score;
             }
             Destroy(other.gameObject);
-            
+
 
         }
         if (other.gameObject.CompareTag("five"))
@@ -226,13 +232,13 @@ public class Player_Movement : MonoBehaviour
             }
             Destroy(other.gameObject);
 
-           
+
 
 
         }
         if (other.gameObject.CompareTag("six"))
         {
-            
+
 
             if (operator_collected)
             {
@@ -265,7 +271,7 @@ public class Player_Movement : MonoBehaviour
 
         if (other.gameObject.CompareTag("seven"))
         {
-            
+
 
             if (operator_collected)
             {
@@ -297,7 +303,7 @@ public class Player_Movement : MonoBehaviour
         }
         if (other.gameObject.CompareTag("eight"))
         {
-            
+
             if (operator_collected)
             {
                 if (operatortext == "/")
@@ -327,7 +333,7 @@ public class Player_Movement : MonoBehaviour
         }
         if (other.gameObject.CompareTag("nine"))
         {
-           
+
 
             if (operator_collected)
             {
@@ -358,7 +364,9 @@ public class Player_Movement : MonoBehaviour
 
         }
 
-
+        
     }
+
+
 
 }
