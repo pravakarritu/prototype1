@@ -78,18 +78,18 @@ public class Player_Movement : MonoBehaviour
             operator_collected = true;
             Destroy(other.gameObject);
         }
-        if (other.gameObject.CompareTag("one"))
+        if (other.gameObject.CompareTag("ten"))
         { if (operator_collected)
             {
                 if (operatortext == "/")
                 {
-                    score /= 1;
+                    score /= 10;
                 }
 
 
                 if (operatortext == "X")
                 {
-                    score *= 1;
+                    score *= 10;
 
                 }
                 scoreText.text = "Score: " + score;
@@ -100,7 +100,7 @@ public class Player_Movement : MonoBehaviour
             }
             else
             {
-                score += 1;
+                score += 10;
                 scoreText.text = "Score: " + score;
 
             }
@@ -109,7 +109,7 @@ public class Player_Movement : MonoBehaviour
 
 
         }
-        if (other.gameObject.CompareTag("two"))
+        if (other.gameObject.CompareTag("twenty"))
         {
 
 
@@ -117,13 +117,13 @@ public class Player_Movement : MonoBehaviour
             {
                 if (operatortext == "/")
                 {
-                    score /= 2;
+                    score /= 20;
                 }
 
 
                 if (operatortext == "X")
                 {
-                    score *= 2;
+                    score *= 20;
 
                 }
                 scoreText.text = "Score: " + score;
@@ -134,27 +134,27 @@ public class Player_Movement : MonoBehaviour
             }
             else
             {
-                score += 2;
+                score += 20;
                 scoreText.text = "Score: " + score;
             }
             Destroy(other.gameObject);
 
         }
 
-        if (other.gameObject.CompareTag("three"))
+        if (other.gameObject.CompareTag("fifty"))
         {
 
             if (operator_collected)
             {
                 if (operatortext == "/")
                 {
-                    score /= 3;
+                    score /= 50;
                 }
 
 
                 if (operatortext == "X")
                 {
-                    score *= 3;
+                    score *= 50;
 
                 }
                 scoreText.text = "Score: " + score;
@@ -166,203 +166,16 @@ public class Player_Movement : MonoBehaviour
             }
             else
             {
-                score += 3;
+                score += 50;
                 scoreText.text = "Score: " + score;
             }
             Destroy(other.gameObject);
         }
-        if (other.gameObject.CompareTag("four"))
-        {
-            if (operator_collected)
-            {
-                if (operatortext == "/")
-                {
-                    score /= 4;
-                }
+        
 
-
-                if (operatortext == "X")
-                {
-                    score *= 4;
-
-                }
-                scoreText.text = "Score: " + score;
-                operator_collected = false;
-
-                operatorText.text = "Operator collected : ";
-
-
-            }
-            else
-            {
-                score += 4;
-                scoreText.text = "Score: " + score;
-            }
-            Destroy(other.gameObject);
-
-
-        }
-        if (other.gameObject.CompareTag("five"))
-        {
-
-            if (operator_collected)
-            {
-                if (operatortext == "/")
-                {
-                    score /= 5;
-                }
-
-
-                if (operatortext == "X")
-                {
-                    score *= 5;
-
-                }
-                scoreText.text = "Score: " + score;
-                operator_collected = false;
-                operatorText.text = "Operator collected : ";
-
-
-
-            }
-            else
-            {
-                score += 5;
-                scoreText.text = "Score: " + score;
-            }
-            Destroy(other.gameObject);
-
-
-
-
-        }
-        if (other.gameObject.CompareTag("six"))
-        {
-
-
-            if (operator_collected)
-            {
-                if (operatortext == "/")
-                {
-                    score /= 6;
-                }
-
-
-                if (operatortext == "X")
-                {
-                    score *= 6;
-
-                }
-                scoreText.text = "Score: " + score;
-                operator_collected = false;
-                operatorText.text = "Operator collected : ";
-
-
-
-            }
-            else
-            {
-                score += 6;
-                scoreText.text = "Score: " + score;
-            }
-            Destroy(other.gameObject);
-
-        }
-
-        if (other.gameObject.CompareTag("seven"))
-        {
-
-
-            if (operator_collected)
-            {
-                if (operatortext == "/")
-                {
-                    score /= 7;
-                }
-
-
-                if (operatortext == "X")
-                {
-                    score *= 7;
-
-                }
-                scoreText.text = "Score: " + score;
-                operator_collected = false;
-                operatorText.text = "Operator collected : ";
-
-
-            }
-            else
-            {
-                score += 7;
-                scoreText.text = "Score: " + score;
-            }
-            Destroy(other.gameObject);
-
-
-        }
-        if (other.gameObject.CompareTag("eight"))
-        {
-
-            if (operator_collected)
-            {
-                if (operatortext == "/")
-                {
-                    score /= 8;
-                }
-
-
-                if (operatortext == "X")
-                {
-                    score *= 8;
-
-                }
-                scoreText.text = "Score: " + score;
-                operator_collected = false;
-                operatorText.text = "Operator collected : ";
-
-
-
-            }
-            else
-            {
-                score += 8;
-                scoreText.text = "Score: " + score;
-            }
-            Destroy(other.gameObject);
-        }
-        if (other.gameObject.CompareTag("nine"))
-        {
-
-
-            if (operator_collected)
-            {
-                if (operatortext == "/")
-                {
-                    score /= 9;
-                }
-
-
-                if (operatortext == "X")
-                {
-                    score *= 9;
-
-                }
-                scoreText.text = "Score: " + score;
-                operator_collected = false;
-                operatorText.text = "Operator collected : ";
-
-
-
-            }
-            else
-            {
-                score += 9;
-                scoreText.text = "Score: " + score;
-            }
-            Destroy(other.gameObject);
-
-        }
+       
+        
+        
 
         
     }
