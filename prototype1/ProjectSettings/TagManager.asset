@@ -22,6 +22,8 @@ TagManager:
   - ten
   - twenty
   - fifty
+  - Game Manager
+  - GameManager
   layers:
   - Default
   - TransparentFX
