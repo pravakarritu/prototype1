@@ -21,6 +21,7 @@ public class Player_Movement : MonoBehaviour
     private bool operator_collected = false;
     private string operatortext;
     private GameManager gameManager;
+    private bool location;
 
 
 
@@ -28,6 +29,8 @@ public class Player_Movement : MonoBehaviour
     void Start()
     {
         playerRb = GetComponent<Rigidbody>();
+        gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
+
 
     }
 
@@ -35,7 +38,9 @@ public class Player_Movement : MonoBehaviour
     void Update()
 
     {
-        
+
+
+
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 playerRb.AddForce(Vector3.up * jumpForce, ForceMode.Acceleration);
@@ -49,6 +54,8 @@ public class Player_Movement : MonoBehaviour
 
                 playerRb.AddForce(0, 0, -forwardsForce * Time.deltaTime, ForceMode.VelocityChange);
             }
+
+
             if (Input.GetKey(KeyCode.LeftArrow))
             {
                 playerRb.AddForce(-sidewaysForce * Time.deltaTime, 0, 0, ForceMode.VelocityChange);
@@ -57,29 +64,43 @@ public class Player_Movement : MonoBehaviour
             {
                 playerRb.AddForce(sidewaysForce * Time.deltaTime, 0, 0, ForceMode.VelocityChange);
             }
-        
+
+        if (transform.position.x < -70 || transform.position.x > -20)
+        {
+            gameManager.GameOver();
+
+        }
 
     }
 
     private void OnCollisionEnter(Collision other)
-    {
 
+
+    {
+        
         if (other.gameObject.CompareTag("multiplication"))
         {
             operatortext = "X";
             operatorText.text = "Operator collected : " + operatortext;
             operator_collected = true;
-            Destroy(other.gameObject);
+           if (other.gameObject!=null)
+            {
+                Destroy(other.gameObject);
+            }
         }
         if (other.gameObject.CompareTag("division"))
         {
             operatortext = "/";
             operatorText.text = "Operator collected : " + operatortext;
             operator_collected = true;
-            Destroy(other.gameObject);
+            if (other.gameObject != null)
+            {
+                Destroy(other.gameObject);
+            }
         }
         if (other.gameObject.CompareTag("ten"))
-        { if (operator_collected)
+        {
+            if (operator_collected)
             {
                 if (operatortext == "/")
                 {
@@ -100,18 +121,25 @@ public class Player_Movement : MonoBehaviour
             }
             else
             {
+                
                 score += 10;
                 scoreText.text = "Score: " + score;
 
             }
-            Destroy(other.gameObject);
+            if (other.gameObject != null)
+            {
+                Destroy(other.gameObject);
+            }
+            if (score >= 100)
+            {
+                gameManager.GameOver();
+            }
 
 
 
         }
         if (other.gameObject.CompareTag("twenty"))
         {
-
 
             if (operator_collected)
             {
@@ -137,13 +165,18 @@ public class Player_Movement : MonoBehaviour
                 score += 20;
                 scoreText.text = "Score: " + score;
             }
-            Destroy(other.gameObject);
-
+            if (other.gameObject != null)
+            {
+                Destroy(other.gameObject);
+            }
+            if (score >= 100)
+            {
+                gameManager.GameOver();
+            }
         }
 
         if (other.gameObject.CompareTag("fifty"))
         {
-
             if (operator_collected)
             {
                 if (operatortext == "/")
@@ -169,23 +202,28 @@ public class Player_Movement : MonoBehaviour
                 score += 50;
                 scoreText.text = "Score: " + score;
             }
-            Destroy(other.gameObject);
+            if (other.gameObject != null)
+            {
+                Destroy(other.gameObject);
+            }
+
+            if(score>=100)
+            {
+                gameManager.GameOver();
+            }
         }
 
         if (other.gameObject.CompareTag("Obstacle"))
         {
-
-                score -= 50;
+            
+            score -= 50;
                 scoreText.text = "Score: " + score;
-      
-            Destroy(other.gameObject);
+            if (other.gameObject!=null)
+            {
+                Destroy(other.gameObject);
+            }
+            
         }
-
-
-
-
-
-
 
     }
 

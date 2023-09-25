@@ -8,12 +8,22 @@ public class SpinObjects : MonoBehaviour
 
     // Update is called once per frame
     private GameManager gameManager;
-    
+
+
+    void Start()
+    {
+        gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
+
+
+    }
 
     void Update()
     {
-        
+        if(gameManager.isGameActive == true)
+        {
             transform.Rotate(Vector3.forward, spinSpeed * Time.deltaTime);
-        
+
+        }
+
     }
 }
