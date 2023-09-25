@@ -113,7 +113,7 @@ public class Player_Movement : MonoBehaviour
                     score *= 10;
 
                 }
-                scoreText.text = "Score: " + score;
+                scoreText.text = "Score: " + score+"/100";
                 operator_collected = false;
                 operatorText.text = "Operator collected : ";
 
@@ -123,7 +123,7 @@ public class Player_Movement : MonoBehaviour
             {
                 
                 score += 10;
-                scoreText.text = "Score: " + score;
+                scoreText.text = "Score: " + score+"/100";
 
             }
             if (other.gameObject != null)
@@ -154,7 +154,7 @@ public class Player_Movement : MonoBehaviour
                     score *= 20;
 
                 }
-                scoreText.text = "Score: " + score;
+                scoreText.text = "Score: " + score+"/100";
                 operator_collected = false;
                 operatorText.text = "Operator collected : ";
 
@@ -163,7 +163,7 @@ public class Player_Movement : MonoBehaviour
             else
             {
                 score += 20;
-                scoreText.text = "Score: " + score;
+                scoreText.text = "Score: " + score+"/100";
             }
             if (other.gameObject != null)
             {
@@ -190,7 +190,7 @@ public class Player_Movement : MonoBehaviour
                     score *= 50;
 
                 }
-                scoreText.text = "Score: " + score;
+                scoreText.text = "Score: " + score+"/100";
                 operator_collected = false;
                 operatorText.text = "Operator collected : ";
 
@@ -200,7 +200,7 @@ public class Player_Movement : MonoBehaviour
             else
             {
                 score += 50;
-                scoreText.text = "Score: " + score;
+                scoreText.text = "Score: " + score+"/100";
             }
             if (other.gameObject != null)
             {
@@ -217,7 +217,7 @@ public class Player_Movement : MonoBehaviour
         {
             
             score -= 50;
-                scoreText.text = "Score: " + score;
+                scoreText.text = "Score: " + score+"/100";
             if (other.gameObject!=null)
             {
                 Destroy(other.gameObject);
