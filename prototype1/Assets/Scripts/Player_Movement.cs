@@ -171,13 +171,22 @@ public class Player_Movement : MonoBehaviour
             }
             Destroy(other.gameObject);
         }
-        
 
-       
-        
-        
+        if (other.gameObject.CompareTag("Obstacle"))
+        {
 
-        
+                score -= 50;
+                scoreText.text = "Score: " + score;
+      
+            Destroy(other.gameObject);
+        }
+
+
+
+
+
+
+
     }
 
 
