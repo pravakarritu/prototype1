@@ -12,6 +12,7 @@ public class Sphere_Movement : MonoBehaviour
     
     public float forwardInput;
     // Start is called before the first frame update
+
     void Start()
     {
         
@@ -22,6 +23,14 @@ public class Sphere_Movement : MonoBehaviour
     {
         horizontalInput = Input.GetAxis("Horizontal");
         forwardInput = Input.GetAxis("Vertical");
+
+        if(transform.position.x < -70){
+            transform.position = new Vector3(-70, transform.position.y, transform.position.z);
+        }
+
+        if(transform.position.x > -30){
+            transform.position = new Vector3(-30, transform.position.y, transform.position.z);
+        }
 
          // Move the vehicle   
          transform.Translate(Vector3.forward * Time.deltaTime * speed);
