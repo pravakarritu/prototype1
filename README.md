@@ -2,6 +2,12 @@ Coursework of CSCI 526 - Advanced Mobile Devices and Game Consoles
 
 Paired Exploration
 
+| Name | Individual contribution |
+| --- | --- |
+| Ritu Pravakar| Game Idea, Player Logic, Score Board Logic, Coin Control Logic |
+| Sanchita Anil Shirur | Game Idea, Game Logic, Platform Setup, Game Design Document |
+| Adwait Raut | Game Idea, Game Logic, Racing, and Platform Setup |
+
 Game Jam Prototype Document
 
 
