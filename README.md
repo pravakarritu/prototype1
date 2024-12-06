@@ -7,7 +7,8 @@
 
 
 ## Section 2 Grade
-![Uploading Screenshot from 2024-12-07 00-23-28.png…]()
+![Screenshot from 2024-12-07 00-24-52](https://github.com/user-attachments/assets/c319efce-8601-421b-afdc-202262134230)
+
 
 
 
