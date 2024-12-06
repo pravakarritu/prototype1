@@ -2,11 +2,13 @@
 
 
 ## Section 1 Grade
-![Screenshot from 2024-12-07 00-18-28](https://github.com/user-attachments/assets/9d6ccd13-ab4e-4ece-9ae8-69b94d764a1c)
+![Screenshot from 2024-12-07 00-22-39](https://github.com/user-attachments/assets/37fea9bf-4589-4ac8-a408-74e09d52c66a)
+
 
 
 ## Section 2 Grade
-![Screenshot from 2024-12-07 00-19-47](https://github.com/user-attachments/assets/b85ce59f-90be-4ed2-94b4-0822b72c7b42)
+![Uploading Screenshot from 2024-12-07 00-23-28.png…]()
+
 
 
 Final Grade : A
